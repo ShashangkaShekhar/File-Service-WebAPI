@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="PhoneBookModelStoreContainer" CdmEntityContainer="PhoneBookEntities">
+    <EntitySetMapping Name="UserContacts">
+      <EntityTypeMapping TypeName="PhoneBookModel.UserContact">
+        <MappingFragment StoreEntitySet="UserContact">
+          <ScalarProperty Name="Signature" ColumnName="Signature" />
+          <ScalarProperty Name="Avatar" ColumnName="Avatar" />
+          <ScalarProperty Name="Contact" ColumnName="Contact" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
