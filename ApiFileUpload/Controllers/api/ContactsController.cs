@@ -116,7 +116,6 @@ namespace ApiFileUpload.Controllers.api
 
             try
             {
-                //http://stackoverflow.com/questions/30490313/post-json-with-data-and-file-to-web-api-jquery-mvc
                 foreach (string kvp in nvc.AllKeys)
                 {
                     PropertyInfo pi = userContact.GetType().GetProperty(kvp, BindingFlags.Public | BindingFlags.Instance);
