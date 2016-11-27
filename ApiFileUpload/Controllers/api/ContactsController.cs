@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
@@ -112,16 +112,16 @@ namespace ApiFileUpload.Controllers.api
             var userContact = new UserContact();
             var httpRequest = HttpContext.Current.Request;
             var requestedFiles = httpRequest.Files;
-            NameValueCollection nvc = httpRequest.Form;
+            NameValueCollection formValueCollection = httpRequest.Form;
 
             try
             {
-                foreach (string kvp in nvc.AllKeys)
+                foreach (string keyVal in formValueCollection.AllKeys)
                 {
-                    PropertyInfo pi = userContact.GetType().GetProperty(kvp, BindingFlags.Public | BindingFlags.Instance);
-                    if (pi != null)
+                    PropertyInfo objProperty = userContact.GetType().GetProperty(keyVal, BindingFlags.Public | BindingFlags.Instance);
+                    if (objProperty != null)
                     {
-                        pi.SetValue(userContact, nvc[kvp], null);
+                        objProperty.SetValue(userContact, formValueCollection[keyVal], null);
                     }
                 }
 
